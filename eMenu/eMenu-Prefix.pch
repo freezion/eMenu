@@ -1,0 +1,24 @@
+//
+// Prefix header for all source files of the 'eMenu' target in the 'eMenu' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#define WEBSERVICE_ADDRESS @"http://192.168.1.14/EMenuSync-WT/"
+#define SRV_CONNECTED 0
+#define SRV_CONNECT_SUC 1
+#define SRV_CONNECT_FAIL 2
+#define PAGE_ITEM 3
+#define HOST_IP @"192.168.1.14"
+#define HOST_PORT 9904
+//#define WEBSERVICE_ADDRESS @"http://192.168.0.106/EMenuSync-WT/"
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "SystemUtil.h"
+#endif
