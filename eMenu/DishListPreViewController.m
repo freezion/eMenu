@@ -243,6 +243,8 @@
     cell.dishUnit.text = dishModel.unit;
     cell.dishCount.text = dishModel.dishCount;
     cell.dishCode.text = dishModel.dishCode;
+    
+    cell.backgroundColor = [UIColor clearColor];
 
 	return cell;
 }

@@ -86,6 +86,9 @@
     [cell.dishImage setImage:image];
     cell.lblDishCode.text = dishModel.dishCode;
     cell.lblDishName.text = dishModel.dishName;
+    
+    cell.backgroundColor = [UIColor clearColor];
+    
     return cell;
 }
 

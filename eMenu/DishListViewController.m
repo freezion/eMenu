@@ -7,6 +7,7 @@
 //
 
 #import "DishListViewController.h"
+#import "UIImageView+WebCache.h"
 
 @interface DishListViewController ()
 
@@ -56,14 +57,16 @@
     DishCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     DishModel *dishModel = [self.dishList objectAtIndex:indexPath.row];
     
-    UIImage *image = [UIImage imageNamed:@"nopic.png"];
+    //UIImage *image = [UIImage imageNamed:@"nopic.png"];
     NSRange range = [dishModel.imageUrl rangeOfString:@"."];
     if (2147483647 != range.location) {
-        image = [UIImage imageWithContentsOfFile:dishModel.imageUrl];
+        //image = [UIImage imageWithContentsOfFile:dishModel.imageUrl];
         cell.dishImage.userInteractionEnabled = YES;
     }
     
-    [cell.dishImage setImage:image];
+    //[cell.dishImage setImage:image];
+    [cell.dishImage setImageWithURL:[NSURL fileURLWithPath:dishModel.imageUrl]
+                   placeholderImage:[UIImage imageNamed:@"nopic.png"]];
     [cell.dishImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openMedia:)]];
     
     if ([dishModel.isPopular isEqualToString:@"1"]) {
@@ -87,6 +90,9 @@
     cell.txtDishDesc.text = dishModel.dishDesc;
     cell.lblDishCount.tag = indexPath.row;
     cell.lblDishCount.text = dishModel.dishCount;
+    
+    cell.backgroundColor = [UIColor clearColor];
+    
     return cell;
 }
 
