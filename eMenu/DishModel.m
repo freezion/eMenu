@@ -26,6 +26,7 @@
     //NSLog(@"%@", imageUrlForDownload);
     NSString *filePath = @"";
     NSString *stringURL = [WEBSERVICE_ADDRESS stringByAppendingString:imageUrlForDownload];
+    
     NSString *escapedUrlString = [stringURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL  *url = [NSURL URLWithString:escapedUrlString];
     NSData *urlData = [NSData dataWithContentsOfURL:url];
@@ -40,8 +41,51 @@
         filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory, fileName];
         [urlData writeToFile:filePath atomically:YES];
     }
+    
+    NSString *imageSmall = [imageUrlForDownload stringByAppendingString:@"_s.jpg"];
+    stringURL = [WEBSERVICE_ADDRESS stringByAppendingString:imageSmall];
+    
+    escapedUrlString = [stringURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    url = [NSURL URLWithString:escapedUrlString];
+    urlData = [NSData dataWithContentsOfURL:url];
+    if ( urlData )
+    {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        
+        NSRange range = [stringURL rangeOfString:@"/" options:NSBackwardsSearch];
+        NSString *fileName = [stringURL substringFromIndex:NSMaxRange(range)];
+        
+        NSString *filePathSmall = [NSString stringWithFormat:@"%@/%@", documentsDirectory, fileName];
+        [urlData writeToFile:filePathSmall atomically:YES];
+    }
+    
+//    NSArray *components = [imageUrlForDownload componentsSeparatedByString:@"."];
+//    if ([components count] == 2) {
+//        NSString *imageSmall = [components objectAtIndex:0];
+//        imageSmall = [imageSmall stringByAppendingString:@"_s."];
+//        imageSmall = [imageSmall stringByAppendingString:[components objectAtIndex:1]];
+//        stringURL = [WEBSERVICE_ADDRESS stringByAppendingString:imageSmall];
+//        escapedUrlString = [stringURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//        url = [NSURL URLWithString:escapedUrlString];
+//        urlData = [NSData dataWithContentsOfURL:url];
+//        if ( urlData )
+//        {
+//            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//            NSString *documentsDirectory = [paths objectAtIndex:0];
+//            
+//            NSRange range = [stringURL rangeOfString:@"/" options:NSBackwardsSearch];
+//            NSString *fileName = [stringURL substringFromIndex:NSMaxRange(range)];
+//            
+//            NSString *filePathSmall = [NSString stringWithFormat:@"%@/%@", documentsDirectory, fileName];
+//            [urlData writeToFile:filePathSmall atomically:YES];
+//        }
+//    }
+    
     return filePath;
 }
+
+
 
 + (NSMutableArray *) searchDish:(NSString *) searchData {
     NSMutableArray *dishList = [[NSMutableArray alloc] init];

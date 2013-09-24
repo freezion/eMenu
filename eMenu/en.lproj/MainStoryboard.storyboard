@@ -138,7 +138,7 @@
                                 <color key="textColor" red="0.85333625639999999" green="0.62182801379999997" blue="0.073664098080000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="22" sectionFooterHeight="22" id="W4p-Rj-TCc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="22" sectionFooterHeight="22" id="W4p-Rj-TCc">
                                 <rect key="frame" x="45" y="94" width="240" height="540"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <prototypes>
@@ -520,7 +520,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="700"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="22" sectionFooterHeight="22" id="X8P-pf-3Ha">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="22" sectionFooterHeight="22" id="X8P-pf-3Ha">
                                 <rect key="frame" x="11" y="74" width="370" height="563"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -638,7 +638,11 @@
     <resources>
         <image name="clearDishList.png" width="102" height="39"/>
         <image name="defaultButton.png" width="90" height="35"/>
+        <image name="defaultButton.png" width="90" height="35"/>
+        <image name="defaultButton.png" width="90" height="35"/>
+        <image name="defaultButton.png" width="90" height="35"/>
         <image name="default_imgButtonMinusDish.png" width="55" height="38"/>
+        <image name="default_imgDPPlusOneButton.png" width="55" height="38"/>
         <image name="default_imgDPPlusOneButton.png" width="55" height="38"/>
         <image name="default_imgTitleBackground.png" width="303" height="52"/>
         <image name="dishPreBg.png" width="393" height="700"/>

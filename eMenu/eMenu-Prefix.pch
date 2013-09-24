@@ -9,6 +9,7 @@
 #endif
 
 #define WEBSERVICE_ADDRESS @"http://211.143.254.235:8006/"
+//#define WEBSERVICE_ADDRESS @"http://10.1.2.9:8090/"
 #define SRV_CONNECTED 0
 #define SRV_CONNECT_SUC 1
 #define SRV_CONNECT_FAIL 2

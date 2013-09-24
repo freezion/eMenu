@@ -10,6 +10,7 @@
 #import "DishModel.h"
 #import "SearchDishCell.h"
 #import "OrderDish.h"
+#import "UIImageView+WebCache.h"
 
 @interface SearchDishViewController ()
 
@@ -78,12 +79,16 @@
     static NSString *CellIdentifier = @"SearchDishCell";
     SearchDishCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     DishModel *dishModel = [self.dishList objectAtIndex:indexPath.row];
-    UIImage *image = [UIImage imageNamed:@"nopic.png"];
+    //UIImage *image = [UIImage imageNamed:@"nopic.png"];
     NSRange range = [dishModel.imageUrl rangeOfString:@"."];
     if (2147483647 != range.location) {
-        image = [UIImage imageWithContentsOfFile:dishModel.imageUrl];
+        //image = [UIImage imageWithContentsOfFile:dishModel.imageUrl];
+        cell.dishImage.userInteractionEnabled = YES;
     }
-    [cell.dishImage setImage:image];
+    
+    //[cell.dishImage setImage:image];
+    NSString *smallImage = [dishModel.imageUrl stringByAppendingString:@"_s.jpg"];
+    [cell.dishImage setImageWithURL:[NSURL fileURLWithPath:smallImage]];
     cell.lblDishCode.text = dishModel.dishCode;
     cell.lblDishName.text = dishModel.dishName;
     

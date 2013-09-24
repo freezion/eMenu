@@ -36,6 +36,7 @@
 @property (nonatomic, retain) NSString *dishCount;
 
 - (NSString *) downloadImage:(NSString *) imageUrl;
+- (NSString *) getSmallImage:(NSString *) imageUrl;
 + (NSMutableArray *) getAllDish;
 + (NSMutableArray *) getDishByType:(NSString *) dishTypeId;
 + (NSMutableArray *) searchDish:(NSString *) searchData;
