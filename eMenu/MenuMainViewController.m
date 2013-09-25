@@ -570,7 +570,7 @@
         [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
         self.txtTableNo = [alert textFieldAtIndex:0];
         self.txtTableNo.placeholder = @"输入桌号";
-        self.txtTableNo.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+        self.txtTableNo.keyboardType = UIKeyboardTypeNumberPad;
         [alert show];
     }
 }
