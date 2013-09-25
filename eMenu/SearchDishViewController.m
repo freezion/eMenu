@@ -77,7 +77,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"SearchDishCell";
-    SearchDishCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    SearchDishCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     DishModel *dishModel = [self.dishList objectAtIndex:indexPath.row];
     //UIImage *image = [UIImage imageNamed:@"nopic.png"];
     NSRange range = [dishModel.imageUrl rangeOfString:@"."];

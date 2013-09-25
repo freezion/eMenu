@@ -33,7 +33,7 @@
 @property (nonatomic, retain) MBProgressHUD *HUD;
 @property (nonatomic, retain) UITextField *txtTableNo;
 @property (nonatomic, retain) UIStoryboard *storyborad;
-@property (nonatomic, strong) NSMutableArray *viewControllers;
+@property (nonatomic, retain) NSMutableArray *viewControllers;
 @property (nonatomic, retain) NSMutableArray *tabItems;
 @property (nonatomic, retain) NSArray *dishList;
 @property (nonatomic, retain) NSArray *dishTypeList;
